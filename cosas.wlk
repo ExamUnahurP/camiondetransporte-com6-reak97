@@ -58,11 +58,35 @@ object arenaAGranel{
 }
 
 object bateriaAntiaerea{
-    var tieneMisiles=
+    var tieneMisiles= true
     method peso(){
-
+        if tieneMisiles(){
+            return 300    
+        }else{
+            return 200
+        }
     }
     method tieneMisiles(){
+        return tieneMisiles
+    }
+    method cambiarEstadoMisiles(){
+        tieneMisiles= not tieneMisiles
+    }
+    method peligrosidad(){
+        if tieneMisiles{
+            return 100
+        }else{
+            return 0
+        }
+    }
+}
 
+object contenedorPortuario{
+    const carga= []
+    method peso(){
+        return 100 + 
+    }
+    method pesoCarga(){
+        return carga.map()
     }
 }
