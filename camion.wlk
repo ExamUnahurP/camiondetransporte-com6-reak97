@@ -1,6 +1,9 @@
 import cosas.*
 object camion {
     const carga= []
+    method carga(){
+        return carga
+    }
     method peso(){
         return 1000 + self.pesoCarga() 
     }
@@ -12,5 +15,8 @@ object camion {
     }
     method descargar(unaCosa){
         carga.remove(unaCosa)
+    }
+    method sonPares(){
+        return carga.all({e})
     }
 }

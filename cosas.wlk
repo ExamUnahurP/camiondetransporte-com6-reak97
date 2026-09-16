@@ -1,4 +1,4 @@
-object knightRider(){
+object knightRider{
     method peso(){
         return 500
     }
