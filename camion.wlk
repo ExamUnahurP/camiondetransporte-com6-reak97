@@ -8,7 +8,7 @@ object camion {
         return 1000 + self.pesoCarga() 
     }
     method pesoCarga(){
-        return carga.map({e => e.peso()}).sum()
+        return carga.map({unaCarga => unaCarga.peso()}).sum()
     }
     method cargar(unaCosa){
         carga.add(unaCosa)
@@ -17,6 +17,10 @@ object camion {
         carga.remove(unaCosa)
     }
     method sonPares(){
-        return carga.all({e})
+        return carga.all({unaCarga => unaCarga.peso().even()})
     }
+    method pesaUn(valor){
+        return carga.any({unaCarga => unaCarga.peso() == valor})
+    }
+    method 
 }
