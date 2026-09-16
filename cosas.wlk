@@ -12,7 +12,7 @@ object bumblebee{
         return 800
     }
     method peligrosidad(){
-
+        return estado.peligrosidad()
     }
     method cambiarEstado(unEstado){
         estado= unEstado
@@ -25,7 +25,7 @@ object auto{
     }
 }
 
-object robor{
+object robot{
     method peligrosidad(){
         return 30
     }

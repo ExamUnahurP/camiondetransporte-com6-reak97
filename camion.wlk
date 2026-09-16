@@ -1,6 +1,6 @@
 import cosas.*
 object camion {
-    const carga= []
+    const carga= [knightRider, bumblebee]
     method carga(){
         return carga
     }
@@ -19,8 +19,14 @@ object camion {
     method sonPares(){
         return carga.all({unaCarga => unaCarga.peso().even()})
     }
-    method pesaUn(valor){
-        return carga.any({unaCarga => unaCarga.peso() == valor})
+    method pesaUn(unValor){
+        return carga.any({unaCarga => unaCarga.peso() == unValor})
     }
-    method 
+    method primeroConPeligrosidad(unNivel){
+        return carga.find({unaCarga => unaCarga.peligrosidad() == unNivel})
+    }
+    method peligrosidadSuperiorA(unNivel){
+        return carga.filter({unaCarga => unaCarga.peligrosidad() > unNivel})
+    }
+    
 }
