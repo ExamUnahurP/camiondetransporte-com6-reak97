@@ -28,5 +28,12 @@ object camion {
     method peligrosidadSuperiorA(unNivel){
         return carga.filter({unaCarga => unaCarga.peligrosidad() > unNivel})
     }
-    
+    method peligrosidadSuperiorSegun(unaCarga){
+        return carga.filter({cargaUno => cargaUno.peligrosidad() > unaCarga.peligrosidad()})
+    }
+    method estaExcedido(){
+        return camion.peso() > 2500
+    }
+    method puedeViajarSegun(unValor)
+
 }
