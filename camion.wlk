@@ -34,6 +34,8 @@ object camion {
     method estaExcedido(){
         return camion.peso() > 2500
     }
-    method puedeViajarSegun(unValor)
+    method puedeViajarSegun(unValor){
+        return estaExcedido() and peligrosidadSuperiorA(unValor)
+    }
 
 }
