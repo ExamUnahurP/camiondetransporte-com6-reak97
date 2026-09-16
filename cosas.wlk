@@ -60,11 +60,11 @@ object arenaAGranel{
 object bateriaAntiaerea{
     var tieneMisiles= true
     method peso(){
-        if tieneMisiles(){
-            return 300    
-        }else{
-            return 200
-        }
+        return(if self.tieneMisiles() {
+            300
+            }else{
+                200
+            })
     }
     method tieneMisiles(){
         return tieneMisiles
@@ -73,7 +73,7 @@ object bateriaAntiaerea{
         tieneMisiles= not tieneMisiles
     }
     method peligrosidad(){
-        if tieneMisiles(){
+        if tieneMisiles==true{
             return 100
         }else{
             return 0
