@@ -59,26 +59,14 @@ object arenaAGranel{
 
 object bateriaAntiaerea{
     var tieneMisiles= true
-    method peso(){
-        return(if self.tieneMisiles() {
-            300
-            }else{
-                200
-            })
-    }
+    method peso()= if(self.tieneMisiles()) 300 else 200
     method tieneMisiles(){
         return tieneMisiles
     }
     method cambiarEstadoMisiles(){
         tieneMisiles= not tieneMisiles
     }
-    method peligrosidad(){
-        if tieneMisiles==true{
-            return 100
-        }else{
-            return 0
-        }
-    }
+    method peligrosidad()= if(self.tieneMisiles()) 100 else 0
 }
 
 object contenedorPortuario{
@@ -89,13 +77,19 @@ object contenedorPortuario{
     method pesoCarga(){
         return carga.map({unaCarga => unaCarga.peso()}).sum()
     }
-    method peligrosidad(){
-        return carga.max({unaCarga => unaCarga.peligrosidad()})
-    }
+    method peligrosidad()= if(carga.isEmpty())0 else carga.max({unaCarga => unaCarga.peligrosidad()}).peligrosidad()
+    
     method cargar(unaCarga){
         carga.add(unaCarga)
     }
     method descargar(unaCarga){
         carga.remove(unaCarga)
+    }
+}
+
+object residuosRadioactivos(){
+    var peso= 200
+    method peso(){
+        
     }
 }
