@@ -73,7 +73,7 @@ object bateriaAntiaerea{
         tieneMisiles= not tieneMisiles
     }
     method peligrosidad(){
-        if tieneMisiles{
+        if tieneMisiles(){
             return 100
         }else{
             return 0
@@ -84,9 +84,18 @@ object bateriaAntiaerea{
 object contenedorPortuario{
     const carga= []
     method peso(){
-        return 100 + 
+        return 100 + pesoCarga()
     }
     method pesoCarga(){
-        return carga.map()
+        return carga.map({unaCarga => unaCarga.peso()}).sum()
+    }
+    method peligrosidad(){
+        return carga.max({unaCarga => unaCarga.peligrosidad()})
+    }
+    method cargar(unaCarga){
+        carga.add(unaCarga)
+    }
+    method descargar(unaCarga){
+        carga.remove(unaCarga)
     }
 }
