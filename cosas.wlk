@@ -87,9 +87,28 @@ object contenedorPortuario{
     }
 }
 
-object residuosRadioactivos(){
+object residuosRadioactivos{
     var peso= 200
     method peso(){
-        
+        return peso
+    }
+    method cambiarPeso(unPeso){
+        peso= unPeso
+    }
+    method peligrosidad(){
+        return 200
+    }
+}
+
+object embalajeDeSeguridad{
+    var cosaAEnvolver= residuosRadioactivos
+    method peso(){
+        return cosaAEnvolver.peso()
+    }
+    method cambiarCosaEnvuelta(unaCosa){
+        cosaAEnvolver= unaCosa
+    }
+    method peligrosidad(){
+        return cosaAEnvolver.peligrosidad() * 0.5
     }
 }
