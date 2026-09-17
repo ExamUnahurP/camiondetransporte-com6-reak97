@@ -7,28 +7,15 @@ object knightRider{
     }
 }
 object bumblebee{
-    var estado= auto
+    var esAuto= false
     method peso(){
         return 800
     }
-    method peligrosidad(){
-        return estado.peligrosidad()
-    }
-    method cambiarEstado(unEstado){
-        estado= unEstado
-    }
-}
+    method peligrosidad()= if(esAuto)15 else 30
+    
+    method transformarAAuto(){esAuto= true}
 
-object auto{
-    method peligrosidad(){
-        return 15
-    }
-}
-
-object robot{
-    method peligrosidad(){
-        return 30
-    }
+    method transformarARobot(){esAuto=false}
 }
 
 object paqueteLadrillos{
